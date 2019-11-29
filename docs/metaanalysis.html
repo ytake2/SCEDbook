@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Statistics for Single-Case Experimental Design</title>
+  <meta name="description" content="シングルケース実験デザインで使える統計量や解析手法について解説していくよ">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Statistics for Single-Case Experimental Design" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="シングルケース実験デザインで使える統計量や解析手法について解説していくよ" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Statistics for Single-Case Experimental Design" />
+  
+  <meta name="twitter:description" content="シングルケース実験デザインで使える統計量や解析手法について解説していくよ" />
+  
+
+<meta name="author" content="Yoshitake TAKEBAYASHI">
+
+
+<meta name="date" content="2019-11-30">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="Bayes.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Statistics for SCED</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> この本について</a></li>
+<li class="chapter" data-level="2" data-path="Sced.html"><a href="Sced.html"><i class="fa fa-check"></i><b>2</b> シングルケースデザイン</a><ul>
+<li class="chapter" data-level="2.1" data-path="Sced.html"><a href="Sced.html#sced"><i class="fa fa-check"></i><b>2.1</b> SCEDの型</a></li>
+<li class="chapter" data-level="2.2" data-path="Sced.html"><a href="Sced.html#sced"><i class="fa fa-check"></i><b>2.2</b> SCEDデータのプロット</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="VisualAnalysis.html"><a href="VisualAnalysis.html"><i class="fa fa-check"></i><b>3</b> ヴィジュアルアナリシス</a><ul>
+<li class="chapter" data-level="3.1" data-path="VisualAnalysis.html"><a href="VisualAnalysis.html#va"><i class="fa fa-check"></i><b>3.1</b> VA</a></li>
+<li class="chapter" data-level="3.2" data-path="VisualAnalysis.html"><a href="VisualAnalysis.html#va"><i class="fa fa-check"></i><b>3.2</b> VAの問題</a></li>
+<li class="chapter" data-level="3.3" data-path="VisualAnalysis.html"><a href="VisualAnalysis.html#va"><i class="fa fa-check"></i><b>3.3</b> VAの問題への対処</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="StatisticalAnalysis.html"><a href="StatisticalAnalysis.html"><i class="fa fa-check"></i><b>4</b> 統計解析</a><ul>
+<li class="chapter" data-level="4.1" data-path="StatisticalAnalysis.html"><a href="StatisticalAnalysis.html#section-4.1"><i class="fa fa-check"></i><b>4.1</b> 古典的な批判</a></li>
+<li class="chapter" data-level="4.2" data-path="StatisticalAnalysis.html"><a href="StatisticalAnalysis.html#section-4.2"><i class="fa fa-check"></i><b>4.2</b> 適用可能な解析手法俯瞰</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="Descriptive.html"><a href="Descriptive.html"><i class="fa fa-check"></i><b>5</b> 記述統計</a><ul>
+<li class="chapter" data-level="5.1" data-path="Descriptive.html"><a href="Descriptive.html#-"><i class="fa fa-check"></i><b>5.1</b> 自己相関, 傾向性</a></li>
+<li class="chapter" data-level="5.2" data-path="Descriptive.html"><a href="Descriptive.html#-"><i class="fa fa-check"></i><b>5.2</b> 欠測値, 外れ値</a></li>
+<li class="chapter" data-level="5.3" data-path="Descriptive.html"><a href="Descriptive.html#ird-improve-rate-of-difference"><i class="fa fa-check"></i><b>5.3</b> IRD (improve rate of difference)</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="Overlap.html"><a href="Overlap.html"><i class="fa fa-check"></i><b>6</b> 重複率系の効果量</a><ul>
+<li class="chapter" data-level="6.1" data-path="Overlap.html"><a href="Overlap.html#pnd-percentage-of-non-overlapping-data"><i class="fa fa-check"></i><b>6.1</b> PND (percentage of non-overlapping data)</a></li>
+<li class="chapter" data-level="6.2" data-path="Overlap.html"><a href="Overlap.html#pem-percentage-of-data-points-exceeding-the-median"><i class="fa fa-check"></i><b>6.2</b> PEM (percentage of data points exceeding the median)</a></li>
+<li class="chapter" data-level="6.3" data-path="Overlap.html"><a href="Overlap.html#pet"><i class="fa fa-check"></i><b>6.3</b> PET</a></li>
+<li class="chapter" data-level="6.4" data-path="Overlap.html"><a href="Overlap.html#pand"><i class="fa fa-check"></i><b>6.4</b> PAND</a></li>
+<li class="chapter" data-level="6.5" data-path="Overlap.html"><a href="Overlap.html#nap"><i class="fa fa-check"></i><b>6.5</b> NAP</a></li>
+<li class="chapter" data-level="6.6" data-path="Overlap.html"><a href="Overlap.html#tau-tau-u"><i class="fa fa-check"></i><b>6.6</b> TAU, TAU-U</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="Parametric.html"><a href="Parametric.html"><i class="fa fa-check"></i><b>7</b> パラメトリック系の効果量</a><ul>
+<li class="chapter" data-level="7.1" data-path="Parametric.html"><a href="Parametric.html#rci"><i class="fa fa-check"></i><b>7.1</b> RCI</a></li>
+<li class="chapter" data-level="7.2" data-path="Parametric.html"><a href="Parametric.html#lor"><i class="fa fa-check"></i><b>7.2</b> LOR</a></li>
+<li class="chapter" data-level="7.3" data-path="Parametric.html"><a href="Parametric.html#lrrd-lrri"><i class="fa fa-check"></i><b>7.3</b> LRRd, LRRi</a></li>
+<li class="chapter" data-level="7.4" data-path="Parametric.html"><a href="Parametric.html#rom"><i class="fa fa-check"></i><b>7.4</b> ROM</a></li>
+<li class="chapter" data-level="7.5" data-path="Parametric.html"><a href="Parametric.html#smd"><i class="fa fa-check"></i><b>7.5</b> SMD</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="regression.html"><a href="regression.html"><i class="fa fa-check"></i><b>8</b> 回帰モデルベース</a><ul>
+<li class="chapter" data-level="8.1" data-path="regression.html"><a href="regression.html#piecewise-regression-1"><i class="fa fa-check"></i><b>8.1</b> Piecewise regression 1</a></li>
+<li class="chapter" data-level="8.2" data-path="regression.html"><a href="regression.html#piecewise-regression-2"><i class="fa fa-check"></i><b>8.2</b> Piecewise regression 2</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="Bayes.html"><a href="Bayes.html"><i class="fa fa-check"></i><b>9</b> ベイジアメソッド</a><ul>
+<li class="chapter" data-level="9.1" data-path="Bayes.html"><a href="Bayes.html#section-9.1"><i class="fa fa-check"></i><b>9.1</b> ベイズファクター</a></li>
+<li class="chapter" data-level="9.2" data-path="Bayes.html"><a href="Bayes.html#section-9.2"><i class="fa fa-check"></i><b>9.2</b> 回帰モデルベース</a></li>
+<li class="chapter" data-level="9.3" data-path="Bayes.html"><a href="Bayes.html#section-9.3"><i class="fa fa-check"></i><b>9.3</b> 変化点検出モデル</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="metaanalysis.html"><a href="metaanalysis.html"><i class="fa fa-check"></i><b>10</b> メタ分析</a><ul>
+<li class="chapter" data-level="10.1" data-path="metaanalysis.html"><a href="metaanalysis.html#tau-u"><i class="fa fa-check"></i><b>10.1</b> Tau-Uの統合</a></li>
+<li class="chapter" data-level="10.2" data-path="metaanalysis.html"><a href="metaanalysis.html#section-10.2"><i class="fa fa-check"></i><b>10.2</b> マルチレベルモデルによる統合</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Statistics for Single-Case Experimental Design</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="metaanalysis" class="section level1">
+<h1><span class="header-section-number">Chapter 10</span> メタ分析</h1>
+<div id="tau-u" class="section level2">
+<h2><span class="header-section-number">10.1</span> Tau-Uの統合</h2>
+</div>
+<div id="section-10.2" class="section level2">
+<h2><span class="header-section-number">10.2</span> マルチレベルモデルによる統合</h2>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="Bayes.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": ["S4SCED.pdf", "S4SCED.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
